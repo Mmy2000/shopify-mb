@@ -1,0 +1,287 @@
+<style data-cert-styles>
+.cert-wrapper *,
+.cert-wrapper *::before,
+.cert-wrapper *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.cert-wrapper {
+  font-family: 'PT Serif', Georgia, 'Times New Roman', serif;
+  color: #1a1814;
+  background: #c9c2af;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-feature-settings: "liga", "kern";
+}
+
+.cert {
+  width: 100%;
+  max-width: 794px;
+  margin: 24px auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #ece6d6;
+  box-shadow: 0 12px 40px rgba(0,0,0,.18);
+}
+
+.cert .cert-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.cert .cert-content {
+  position: relative;
+  z-index: 1;
+  padding: 24px 72px 56px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert .header { text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+.cert .logo {
+  width: 260px;
+  height: 170px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+.cert .title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+.cert .title-bar .rule {
+  width: 140px;
+  height: 1px;
+  flex: none;
+}
+.cert .title-bar .rule.left  { background: linear-gradient(to right, transparent 0%, #5d574a 100%); }
+.cert .title-bar .rule.right { background: linear-gradient(to left,  transparent 0%, #5d574a 100%); }
+.cert .title-bar .title {
+  font-family: 'Playfair Display', 'Bodoni 72', 'Didot', serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1a1814;
+}
+
+.cert .data {
+  width: 100%;
+  margin-top: 28px;
+  border: 1px solid #5d574a;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+.cert .data tr td {
+  border: 1px solid #5d574a;
+  padding: 8px 14px;
+  vertical-align: middle;
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cert .data tr td:not([dir="rtl"]):not(.ar) {
+  white-space: nowrap;
+}
+.cert .data tr td[dir="rtl"],
+.cert .data tr td .cell.ar {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.cert .data tr:first-child td {
+  background: rgba(40, 35, 25, 0.04);
+}
+
+.cert .cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.cert .cell.ar {
+  direction: rtl;
+  unicode-bidi: embed;
+  font-family: 'Amiri', 'Noto Naskh Arabic', 'Geeza Pro', 'Arial', serif;
+  font-size: 14px;
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 1, "init" 1, "medi" 1, "fina" 1, "isol" 1;
+  -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 1, "init" 1, "medi" 1, "fina" 1, "isol" 1;
+  text-align: right;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-variant-ligatures: common-ligatures;
+}
+.cert .cell.ar.value-only { justify-content: flex-start; }
+.cert .cell .label { color: #1a1814; font-weight: 500; }
+.cert .cell .value { color: #1a1814; }
+.cert .cell.ar .value,
+.cert .cell.ar .label {
+  direction: rtl;
+  unicode-bidi: embed;
+  font-family: 'Amiri', 'Noto Naskh Arabic', 'Geeza Pro', 'Arial', serif;
+  text-align: right;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.cert .iso-line {
+  margin-top: 70px;
+  padding: 8px 0;
+  border-top: 1px solid #5d574a;
+  border-bottom: 1px solid #5d574a;
+  font-family: 'PT Serif', Georgia, serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.cert .assets {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+.cert .iso-badge {
+  width: 130px;
+  height: 130px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+.cert .qr {
+  width: 90px;
+  height: 90px;
+  padding: 4px;
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cert .qr img,
+.cert .qr canvas { display: block; width: 100% !important; height: 100% !important; }
+
+.cert .footer {
+  margin-top: 48px;
+  padding-top: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+  font-size: 12px;
+  align-items: center;
+}
+.cert .social { display: flex; align-items: center; gap: 8px; }
+.cert .social .icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: #1a1814;
+  padding: 5px;
+}
+
+/* ===== PRINT: fallback for Ctrl+P, primary flow uses iframe ===== */
+@media print {
+  @page { size: A4 portrait; margin: 0; }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+  }
+
+  .cert {
+    width: 210mm !important;
+    height: 297mm !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+
+  .cert .cert-bg {
+    width: 210mm !important;
+    height: 297mm !important;
+  }
+
+  .cert .cert-content {
+    padding: 24px 72px 56px !important;
+  }
+
+  .my-scan-cert__header,
+  .my-scan-cert__actions {
+    display: none !important;
+  }
+}
+
+/* ===== INLINE PREVIEW: responsive scaling ===== */
+@media screen and (max-width: 899px) {
+  .cert .cert-content {
+    padding: 16px 24px 28px;
+  }
+  .cert .logo {
+    width: 140px;
+    height: 90px;
+  }
+  .cert .title-bar .title {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+  }
+  .cert .title-bar .rule {
+    width: 30px;
+  }
+  .cert .data {
+    font-size: 9px;
+    margin-top: 16px;
+  }
+  .cert .data tr td {
+    padding: 5px 8px;
+  }
+  .cert .cell.ar {
+    font-size: 10px;
+  }
+  .cert .iso-line {
+    font-size: 9px;
+    margin-top: 28px;
+    padding: 5px 0;
+  }
+  .cert .assets {
+    margin-top: 16px;
+  }
+  .cert .iso-badge {
+    width: 70px;
+    height: 70px;
+  }
+  .cert .qr {
+    width: 70px;
+    height: 70px;
+    padding: 3px;
+  }
+  .cert .qr img,
+  .cert .qr canvas { width: 100% !important; height: 100% !important; }
+  .cert .footer {
+    margin-top: 32px;
+    gap: 16px;
+    font-size: 9px;
+  }
+  .cert .social .icon {
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border-radius: 4px;
+  }
+}
+</style>

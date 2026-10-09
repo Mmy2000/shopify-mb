@@ -1,0 +1,153 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 16
+      }
+    },
+    "152a2012-b736-4050-8930-de1e243822ed": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16391993786425__152a2012-b736-4050-8930-de1e243822ed-heading-1": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "THE STORY OF KING GOLD",
+            "heading_size": "h2"
+          }
+        },
+        "template--16391993786425__152a2012-b736-4050-8930-de1e243822ed-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>King Gold, established in 1982, has grown from a small workshop to become one of the largest gold jewelry manufacturers in Egypt. With a large factory and numerous authorized distributors across the country, King Gold employs over 500 skilled workers and staff members. The brand is renowned for its elegant, modern, luxurious, and unique jewelry designs.</p><p>King Gold’s product range is extensive, offering pieces that start from less than 1 gram up to 500 grams, catering to a diverse array of customer preferences and needs. In addition to its impressive craftsmanship, King Gold exclusively uses 18k gold, ensuring high quality and durability in every piece.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--16391993786425__152a2012-b736-4050-8930-de1e243822ed-heading-1",
+        "template--16391993786425__152a2012-b736-4050-8930-de1e243822ed-text-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_full_width_bg": true,
+        "image": "shopify://shop_images/hf_20260310_195546_6e36fbc2-04a7-448c-9478-003ae9216499.jpg",
+        "secimage": "shopify://shop_images/instacdn_beubagah_com_b9736b46_ab92_4f13_95ee_0ee7639f347e.jpg",
+        "full_img_radius": true,
+        "banner_offer_text": "",
+        "banner_offer_text_color": "#ffffff",
+        "height": "small",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "3953ff38-1696-4219-b180-15946f529962": {
+      "type": "testimonial",
+      "blocks": {
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-1": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "display_review": false,
+            "star_rating": 5,
+            "quote": "<p>Finding the perfect wedding bands was a daunting task until we discovered. Their expert team guided us through the selection process with patience.</p>",
+            "author": "Jessica W",
+            "authorlink": "@jessica"
+          }
+        },
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-2": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "display_review": false,
+            "star_rating": 5,
+            "quote": "<p>Incredible Service & Attention to Detail! I wanted a custom bracelet for my daughter's graduation, and cello harmony  beyond to make it perfect. </p>",
+            "author": "Jennifer M.",
+            "authorlink": "@jennifer"
+          }
+        },
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-3": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "display_review": false,
+            "star_rating": 5,
+            "quote": "<p>Absolutely Stunning! I purchased a necklace from cello harmony, and I'm in love with it. The design is elegant, and the diamonds are breathtaking. </p>",
+            "author": "Grace W.",
+            "authorlink": "@grace"
+          }
+        },
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-4": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "display_review": false,
+            "star_rating": 5,
+            "quote": "<p>Unmatched Quality and Beauty! My ring from cello harmony is a true masterpiece. The craftsmanship is exceptional, and it sparkles like no other.</p>",
+            "author": "Ryan L.",
+            "authorlink": "@ryan"
+          }
+        }
+      },
+      "block_order": [
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-1",
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-2",
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-3",
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "sec_full_width": false,
+        "miniheading": "",
+        "mini_heading_style": "outline",
+        "title": "Customer Review",
+        "heading_alignment": "left",
+        "heading_size": "h1",
+        "description": "",
+        "description_style": "body",
+        "image_corners": "circle",
+        "columns_desktop": 3,
+        "enable_desktop_slider": true,
+        "arrow_position": "inline",
+        "arrow_style": "icon",
+        "enbale_contant_bg": false,
+        "enable_quote": false,
+        "enbale_bg": true,
+        "star_ratingclr": "#ffbb40",
+        "quote_clr": "#ff5942",
+        "auth_direction": "row",
+        "auth_position": "bottom",
+        "content_alignment": "left",
+        "color_scheme": "scheme-abe3bc68-5409-41dd-abcf-8f9ac474947a",
+        "swipe_on_mobile": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "152a2012-b736-4050-8930-de1e243822ed",
+    "3953ff38-1696-4219-b180-15946f529962"
+  ]
+}

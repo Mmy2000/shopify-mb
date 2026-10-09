@@ -1,0 +1,79 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "custom.overlay",
+  "name": "Overlay Group",
+  "sections": {
+    "84ac2f7e-7788-4aaf-bc8b-54429f1d4b7a": {
+      "type": "popup",
+      "blocks": {
+        "a21764ee-4d1b-461e-9fb7-c44ff4f756da": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Join the Circle</p>"
+          }
+        },
+        "bb7cc531-cdf1-403c-a5ac-749f3f3b22d0": {
+          "type": "subscribe_form",
+          "settings": {
+            "placeholder_input": "Enter your email...",
+            "button_label": "Subscribe Now",
+            "button_position": false,
+            "description": "<p>Be the first to access new arrivals, secret sales, and timeless styling tips crafted for those who shine differently.</p>"
+          }
+        },
+        "a4678b0b-d560-489a-9ae3-2b365a609b0b": {
+          "type": "social_links",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "a21764ee-4d1b-461e-9fb7-c44ff4f756da",
+        "bb7cc531-cdf1-403c-a5ac-749f3f3b22d0",
+        "a4678b0b-d560-489a-9ae3-2b365a609b0b"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/hf_20260310_195546_6e36fbc2-04a7-448c-9478-003ae9216499.jpg",
+        "marquee_text": "",
+        "image_layout": "left",
+        "image_fit": "cover",
+        "limit_display": 100,
+        "limit_days": "30",
+        "position": "center",
+        "content_layout": "center",
+        "trigger_open": "scroll",
+        "open_time_delay": 0,
+        "open_scroll_type": "%",
+        "open_scroll_position": "30",
+        "trigger_close": "scroll",
+        "close_time_delay": 20,
+        "close_scroll_type": "%",
+        "close_scroll_position": "50",
+        "width": 740,
+        "open_animation": "popupOpenFade",
+        "close_animation": "popupExitFade",
+        "show_overlay": true,
+        "mobile_disable": false,
+        "disable_scrolling": false,
+        "overlay_close": true,
+        "esc_close": false,
+        "f4_close": false,
+        "show_on_homepage": true,
+        "show_on_product_category": false,
+        "show_on_all": false,
+        "color_scheme": "background-1"
+      }
+    }
+  },
+  "order": [
+    "84ac2f7e-7788-4aaf-bc8b-54429f1d4b7a"
+  ]
+}

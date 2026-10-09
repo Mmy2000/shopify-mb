@@ -1,0 +1,147 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_URiQDz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rBWDyT": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>How Can We Help You?</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_zmmTxU": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Please Visit Our Help Pages <a href=\"/pages/contact\" title=\"Contact\">Here</a> Some Of The Most Commonly Asked Questions.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rBWDyT",
+        "text_zmmTxU"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "padding_top": 60,
+        "padding_bottom": 64
+      }
+    },
+    "6437b0a2-04b2-4bd5-aacf-68c948ceb2af": {
+      "type": "contact-form",
+      "blocks": {
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-text-1": {
+          "type": "text",
+          "settings": {
+            "field_label": "",
+            "label_placeholder": "Name",
+            "required_field": false
+          }
+        },
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-email-1": {
+          "type": "email",
+          "settings": {
+            "field_label": "",
+            "label_placeholder": "Email",
+            "required_field": true
+          }
+        },
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-phone-1": {
+          "type": "phone",
+          "settings": {
+            "field_label": "",
+            "label_placeholder": "Phone",
+            "required_field": true
+          }
+        },
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-message-1": {
+          "type": "message",
+          "settings": {
+            "field_label": "",
+            "label_placeholder": "Message",
+            "required_field": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-text-1",
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-email-1",
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-phone-1",
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-message-1"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "description": "",
+        "description_style": "body",
+        "enable_gmap": false,
+        "contact_iframe_code": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d459858.09009453026!2d-80.229458!3d25.782408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20FL%2C%20USA!5e0!3m2!1sen!2sin!4v1718168877840!5m2!1sen!2sin\" width=\"800\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "enable_image": true,
+        "image": "shopify://shop_images/The_hand_leads_the_gold_completes18K_GoldMake_it_yours_visit_our_esteemed_partners_across_Egypt.jpg",
+        "color_scheme": "background-1",
+        "padding_top": 4,
+        "padding_bottom": 60
+      }
+    },
+    "map_3Xp6bg": {
+      "type": "map",
+      "blocks": {
+        "banner_with_text_AYRgQN": {
+          "type": "banner_with_text",
+          "settings": {
+            "heading": "Visit Us",
+            "subheading": "<strong>123 Miami Florida , USA</strong>",
+            "text": "<p>Monday - Friday: 10AM - 9PM<br/>Saturday: 11AM - 9PM<br/>Sunday: Closed</p>",
+            "button_label_1": "Get Directions",
+            "button_link_1": "",
+            "view_all_style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "banner_with_text_AYRgQN"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "title": "",
+        "heading_size": "h0",
+        "description": "",
+        "description_style": "body",
+        "contact_iframe_code": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d459858.09009453026!2d-80.229458!3d25.782408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20FL%2C%20USA!5e0!3m2!1sen!2sin!4v1718168877840!5m2!1sen!2sin\" width=\"800\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_URiQDz",
+    "6437b0a2-04b2-4bd5-aacf-68c948ceb2af",
+    "map_3Xp6bg"
+  ]
+}

@@ -1,0 +1,38 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "my-scan": {
+      "type": "my-scan",
+      "settings": {
+        "header_title": "Category details",
+        "header_subtitle": "Category details and information",
+        "badge_text": "Au",
+        "category_label": "GOLD BAR",
+        "product_name": "",
+        "gold_type": "GOLD BAR",
+        "gold_name": "5g Gold Bar - 24K",
+        "product_weight": "",
+        "product_carat": "",
+        "product_id_label": "SERIAL NO",
+        "product_id": "",
+        "api_endpoint": "https://halimjewelry.e-jewelry-softwarehouse.com/Sup/Get_Gold_Details?mco={id}",
+        "api_endpoint_fallback": "https://halimjewelry.e-jewelry-softwarehouse.com/Sup/Get_Gold_Details?sco_mco={id}",
+        "show_certificate": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "my-scan"
+  ]
+}

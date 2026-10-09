@@ -1,0 +1,148 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_image": false,
+        "show_collection_description": true,
+        "hero_layout": "overlay",
+        "coll_bgcolor": "#000000",
+        "coll_color": "#ffffff",
+        "coll_overlay": 30
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "b9a30873-fdf8-43d7-8516-69872e297dae": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "25338a11-9ed2-44a1-baf3-403d1edb69d4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "a1459461-d64f-4ef5-b720-35a5f5f6a010": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "c0d7283a-2745-4702-ae14-39386d8fb771": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "754d289a-b80b-4a10-a8cf-efee84388e38": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "featured_collection_kzGC3h": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "featured_collection_hneYxT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "featured_collection_RB7V68": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        }
+      },
+      "block_order": [
+        "b9a30873-fdf8-43d7-8516-69872e297dae",
+        "25338a11-9ed2-44a1-baf3-403d1edb69d4",
+        "a1459461-d64f-4ef5-b720-35a5f5f6a010",
+        "c0d7283a-2745-4702-ae14-39386d8fb771",
+        "754d289a-b80b-4a10-a8cf-efee84388e38",
+        "featured_collection_kzGC3h",
+        "featured_collection_hneYxT",
+        "featured_collection_RB7V68"
+      ],
+      "settings": {
+        "miniheading": "Limited Editions",
+        "mini_heading_style": "link",
+        "title": "<strong>Shop By Categories</strong>",
+        "heading_position": "coll_left",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "description": "",
+        "description_style": "body",
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "show_icon": false,
+        "enable_collection_img_full": true,
+        "collection_card_direction": "column",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "rows_desktop": 2,
+        "arrow_position": "inline",
+        "arrow_style": "icon",
+        "spacing_grid_horizontal": 30,
+        "spacing_grid_vertical": 30,
+        "color_scheme": "background-1",
+        "enable_hover": false,
+        "scoll_bg": "#ffffff",
+        "scoll_txt": "#000000",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 32,
+        "padding_bottom": 0
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 8,
+        "columns_desktop": 3,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "vertical_filter_bg_color": "#ffffff",
+        "enable_filter_bg": false,
+        "enable_sticky": false,
+        "enable_sorting": true,
+        "pagination_type": "paged",
+        "enable_listdesc": true,
+        "columns_mobile": "2",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "collection-list",
+    "product-grid"
+  ]
+}

@@ -1,0 +1,282 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text_mPFNTx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UXP96B": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Our Store",
+            "heading_size": "h1"
+          }
+        },
+        "text_gcLi7e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At cello harmony, we pride ourselves on curating a stunning collection of jewellery that celebrates life's special moments. Whether you're searching for the perfect engagement ring to symbolize your love, a timeless necklace to mark a milestone, or a sparkling pair of earrings to elevate your everyday style, you'll find it here.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UXP96B",
+        "text_gcLi7e"
+      ],
+      "settings": {
+        "full_width": false,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "inverse",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "152a2012-b736-4050-8930-de1e243822ed": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16391993786425__152a2012-b736-4050-8930-de1e243822ed-heading-1": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Our Mission",
+            "heading_size": "h1"
+          }
+        },
+        "template--16391993786425__152a2012-b736-4050-8930-de1e243822ed-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p> We often serve as a hub for individuals passionate about Jewellery, offering them a space to explore, learn about, and discuss different types of Jewellery , including trends, history, and craftsmanship.</p><p>These websites typically showcase a wide variety of Jewellery pieces, ranging from everyday wear to special occasion items like engagement rings or high-end designer pieces. our aim to cater to diverse tastes and budgets.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "template--16391993786425__152a2012-b736-4050-8930-de1e243822ed-heading-1",
+        "template--16391993786425__152a2012-b736-4050-8930-de1e243822ed-text-1"
+      ],
+      "settings": {
+        "enable_full_width_bg": false,
+        "image": "",
+        "full_img_radius": false,
+        "banner_offer_text": "",
+        "banner_offer_text_color": "#ffffff",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "secondary_background": true,
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "9403db95-ed25-462f-9528-506d79f8cc6d": {
+      "type": "image-banner",
+      "blocks": {
+        "banner_with_text_by3UNP": {
+          "type": "banner_with_text",
+          "settings": {
+            "image": "",
+            "image_overlay_opacity": 40,
+            "banner_width": 33,
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "Dazzle in Every Glance",
+            "heading_size": "h1",
+            "text": "",
+            "text_style": "body",
+            "button_label_1": "Shop Rings",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid",
+            "show_text_box": false,
+            "container_overlay_opacity": 40,
+            "desktop_content_position": "bottom-center",
+            "desktop_content_alignment": "center",
+            "color_scheme": "accent-1",
+            "image_behavior": "none"
+          }
+        },
+        "caed3d72-fc61-400a-8a79-a05109e2d2a8": {
+          "type": "banner_with_text",
+          "settings": {
+            "image": "",
+            "image_overlay_opacity": 20,
+            "banner_width": 33,
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "Elevate Your Style",
+            "heading_size": "h0",
+            "text": "",
+            "text_style": "body",
+            "button_label_1": "Explore Earrings",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid",
+            "show_text_box": false,
+            "container_overlay_opacity": 40,
+            "desktop_content_position": "bottom-center",
+            "desktop_content_alignment": "center",
+            "color_scheme": "accent-1",
+            "image_behavior": "none"
+          }
+        },
+        "90ffced7-af95-4cd3-89fd-07f0f42179fe": {
+          "type": "banner_with_text",
+          "settings": {
+            "image": "",
+            "image_overlay_opacity": 20,
+            "banner_width": 33,
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "<strong>Indulge in Luxury</strong>",
+            "heading_size": "h0",
+            "text": "",
+            "text_style": "body",
+            "button_label_1": "Browse Earrings",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid",
+            "show_text_box": false,
+            "container_overlay_opacity": 40,
+            "desktop_content_position": "bottom-center",
+            "desktop_content_alignment": "center",
+            "color_scheme": "accent-1",
+            "image_behavior": "none"
+          }
+        }
+      },
+      "block_order": [
+        "banner_with_text_by3UNP",
+        "caed3d72-fc61-400a-8a79-a05109e2d2a8",
+        "90ffced7-af95-4cd3-89fd-07f0f42179fe"
+      ],
+      "settings": {
+        "full_width": false,
+        "title": "",
+        "heading_size": "h0",
+        "description": "",
+        "description_style": "body",
+        "heading_alignment": "left",
+        "image_height": "adapt",
+        "show_gap": true,
+        "section_color_scheme": "background-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "3953ff38-1696-4219-b180-15946f529962": {
+      "type": "testimonial",
+      "blocks": {
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-1": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "display_review": false,
+            "star_rating": 5,
+            "quote": "<p>Finding the perfect wedding bands was a daunting task until we discovered. Their expert team guided us through the selection process with patience.</p>",
+            "image": "",
+            "author": "Jessica W",
+            "authorlink": "@jessica"
+          }
+        },
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-2": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "display_review": false,
+            "star_rating": 5,
+            "quote": "<p>Incredible Service & Attention to Detail! I wanted a custom bracelet for my daughter's graduation, and cello harmony  beyond to make it perfect. </p>",
+            "image": "",
+            "author": "Jennifer M.",
+            "authorlink": "@jennifer"
+          }
+        },
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-3": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "display_review": false,
+            "star_rating": 5,
+            "quote": "<p>Absolutely Stunning! I purchased a necklace from cello harmony, and I'm in love with it. The design is elegant, and the diamonds are breathtaking. </p>",
+            "image": "",
+            "author": "Grace W.",
+            "authorlink": "@grace"
+          }
+        },
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-4": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "display_review": false,
+            "star_rating": 5,
+            "quote": "<p>Unmatched Quality and Beauty! My ring from cello harmony is a true masterpiece. The craftsmanship is exceptional, and it sparkles like no other.</p>",
+            "image": "",
+            "author": "Ryan L.",
+            "authorlink": "@ryan"
+          }
+        }
+      },
+      "block_order": [
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-1",
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-2",
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-3",
+        "template--16391993786425__3953ff38-1696-4219-b180-15946f529962-quote-4"
+      ],
+      "settings": {
+        "sec_full_width": false,
+        "miniheading": "",
+        "mini_heading_style": "outline",
+        "title": "Customer Review",
+        "heading_alignment": "left",
+        "heading_size": "h1",
+        "description": "",
+        "description_style": "body",
+        "image_corners": "circle",
+        "columns_desktop": 3,
+        "enable_desktop_slider": true,
+        "arrow_position": "inline",
+        "arrow_style": "icon",
+        "enbale_contant_bg": false,
+        "enable_quote": false,
+        "enbale_bg": true,
+        "star_ratingclr": "#ffbb40",
+        "quote_clr": "#ff5942",
+        "auth_direction": "row",
+        "auth_position": "bottom",
+        "content_alignment": "left",
+        "color_scheme": "scheme-abe3bc68-5409-41dd-abcf-8f9ac474947a",
+        "swipe_on_mobile": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_mPFNTx",
+    "152a2012-b736-4050-8930-de1e243822ed",
+    "9403db95-ed25-462f-9528-506d79f8cc6d",
+    "3953ff38-1696-4219-b180-15946f529962"
+  ]
+}

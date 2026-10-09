@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=794">
+<title>MB Gold — Certificate of Authenticity</title>
+
+<!-- =========================================================
+     FONTS — matched from the original certificate via letterform analysis.
+     Playfair Display 700 -> "CERTIFICATE" heading (high-contrast Didone serif)
+     PT Serif (400/700)   -> all English body text & ISO line (transitional serif)
+     Amiri (400/700)      -> all Arabic text (classical naskh, proper letter-shaping)
+     ========================================================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=PT+Serif:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+/* =============================================================
+   CONFIGURATION — every asset path lives here.
+   On Shopify, replace these with {{ 'paper-texture.jpg' | asset_url }} etc.
+   ============================================================= */
+:root {
+  --asset-paper:    url('assets/paper-texture.png');  /* extracted cream/beige paper bg */
+  --asset-logo:     url('assets/mb-gold-logo.png');   /* MB Gold logo, transparent PNG */
+  --asset-iso:      url('assets/iso-badge.png');      /* ISO 9001 gold badge, transparent PNG */
+  --asset-ig-icon:  url('assets/instagram.svg');      /* Instagram glyph */
+  --asset-fb-icon:  url('assets/facebook.svg');       /* Facebook glyph */
+
+  /* Color system — sampled from the original certificate */
+  --paper:   #ece6d6;
+  --ink:     #1a1814;
+  --rule:    #5d574a;   /* hairline borders */
+  --gold:    #b8995a;
+  --muted:   #6b6557;
+}
+
+@page { size: A4 portrait; margin: 0; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: 'PT Serif', Georgia, 'Times New Roman', serif;
+  color: var(--ink);
+  background: #c9c2af;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-feature-settings: "liga", "kern";
+}
+
+/* =============================================================
+   THE CERTIFICATE CANVAS
+   Fixed A4 dimensions @ 96dpi so PDF output is identical to web.
+   ============================================================= */
+.cert {
+  width: 794px;
+  height: 1123px;
+  margin: 24px auto;
+  padding: 24px 72px 56px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--paper);
+  background-image: var(--asset-paper);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 40px rgba(0,0,0,.18);
+}
+
+/* ---------- HEADER ---------- */
+.header { text-align: center; }
+
+.logo {
+  width: 260px;
+  height: 170px;
+  margin: 0 auto;
+  background-image: var(--asset-logo);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+.title-bar .rule {
+  width: 140px;
+  height: 1px;
+  flex: none;
+}
+.title-bar .rule.left  { background: linear-gradient(to right, transparent 0%, var(--rule) 100%); }
+.title-bar .rule.right { background: linear-gradient(to left,  transparent 0%, var(--rule) 100%); }
+.title-bar .title {
+  font-family: 'Playfair Display', 'Bodoni 72', 'Didot', serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ink);
+}
+
+/* ---------- DATA TABLE ----------
+   Layout per row:
+   [ EN-label  ─  EN-value ] | [ AR-value  ─  AR-label ]
+   Outer cell width = 50/50. Inner uses flex to push label & value apart.
+*/
+.data {
+  width: 100%;
+  margin-top: 28px;
+  border: 1px solid var(--rule);
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+.data tr td {
+  border: 1px solid var(--rule);
+  padding: 8px 14px;
+  vertical-align: middle;
+  width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.data tr:first-child td {
+  background: rgba(40, 35, 25, 0.04);
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.cell.ar {
+  direction: rtl;
+  font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+  font-size: 14px;
+}
+.cell.ar.value-only { justify-content: flex-start; }
+.cell .label { color: var(--ink); font-weight: 500; }
+.cell .value { color: var(--ink); }
+
+/* ---------- ISO LINE ---------- */
+.iso-line {
+  margin-top: 70px;
+  padding: 8px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-family: 'PT Serif', Georgia, serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- BADGE + QR ROW ---------- */
+.assets {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+.iso-badge {
+  width: 130px;
+  height: 130px;
+  background-image: var(--asset-iso);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.qr {
+  width: 90px;
+  height: 90px;
+  padding: 4px;
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05);
+}
+.qr img { width: 100%; height: 100%; display: block; }
+
+/* ---------- FOOTER (social) ----------
+   Original measurements (on 896px-wide source):
+   - IG icon at x=95, gap to FB group = 22px, trailing space = 102px
+   - Icons ~44px square, scaled to ~38px on our 794px A4 canvas
+*/
+.footer {
+  margin-top: 48px;
+  padding-top: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+  font-size: 12px;
+  align-items: center;
+}
+.social { display: flex; align-items: center; gap: 8px; }
+.social .icon {
+  width: 28px;
+  height: 28px;
+  background-color: var(--ink);
+  border-radius: 6px;
+  background-size: 62%;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex: none;
+}
+.social.ig .icon { background-image: var(--asset-ig-icon); }
+.social.fb .icon { background-image: var(--asset-fb-icon); }
+
+/* ---------- PRINT / PDF ---------- */
+@media print {
+  html, body { background: #fff; }
+  .cert {
+    margin: 0;
+    box-shadow: none;
+    width: 210mm;
+    height: 297mm;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- =================================================================
+     DYNAMIC FIELDS — the ONLY parts GLM ever touches.
+     Replace the {{ … }} placeholders with your Shopify Liquid variables,
+     e.g.  {{ certificate.code_no }} , {{ certificate.weight }} , etc.
+     ================================================================= -->
+<div class="cert">
+
+  <header class="header">
+    <div class="logo" role="img" aria-label="MB Gold — Malak & Bushra, Since 1960"></div>
+    <div class="title-bar">
+      <span class="rule left"></span>
+      <span class="title">CERTIFICATE</span>
+      <span class="rule right"></span>
+    </div>
+  </header>
+
+  <table class="data">
+    <tr>
+      <td><div class="cell"><span class="label">Code No.</span><span class="value">{{ code_no }}</span></div></td>
+      <td><div class="cell ar"><span class="label">كود</span><span class="value">{{ code_no }}</span></div></td>
+    </tr>
+    <tr>
+      <td><div class="cell"><span class="label">Description:</span><span class="value">{{ description_en }}</span></div></td>
+      <td><div class="cell ar value-only"><span class="value">{{ description_ar }}</span></div></td>
+    </tr>
+    <tr>
+      <td><div class="cell"><span class="label">Gold Type:</span><span class="value">{{ gold_type_en }}</span></div></td>
+      <td><div class="cell ar value-only"><span class="value">{{ gold_type_ar }}</span></div></td>
+    </tr>
+    <tr>
+      <td><div class="cell"><span class="label">Weight:</span><span class="value">{{ weight_en }}</span></div></td>
+      <td><div class="cell ar value-only"><span class="value">{{ weight_ar }}</span></div></td>
+    </tr>
+  </table>
+
+  <div class="iso-line">ISO 9001:2015 CERTIFIED</div>
+
+  <div class="assets">
+    <div class="iso-badge" role="img" aria-label="ISO 9001:2015 Certified"></div>
+    <div class="qr">
+      <!--
+        QR resolves automatically from the cert URL.
+        For Shopify, use:  {{ shop.url }}/pages/verify?code={{ certificate.code_no }}
+        The api.qrserver.com endpoint is fine for PDF/Puppeteer rendering.
+      -->
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data={{ qr_url }}"
+           alt="Certificate QR">
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="social ig"><span class="icon"></span>instagram.com/MBgold1960</div>
+    <div class="social fb"><span class="icon"></span>facebook.com/MBGold1960</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

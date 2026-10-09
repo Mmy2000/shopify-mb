@@ -1,0 +1,225 @@
+{% doc %}
+  @prompt
+    i want to add the customer service phone number at the top in the header next to the search button
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-customer-phone-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: {{ block.settings.text_color }};
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    transition: all 0.3s ease;
+    font-size: {{ block.settings.font_size }}px;
+    white-space: nowrap;
+  }
+
+  .ai-customer-phone-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.hover_background_color }};
+    color: {{ block.settings.hover_text_color }};
+  }
+
+  .ai-customer-phone-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    flex-shrink: 0;
+  }
+
+  .ai-customer-phone-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  .ai-customer-phone-number-{{ ai_gen_id }} {
+    font-weight: {{ block.settings.font_weight }};
+    letter-spacing: 0.5px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-customer-phone-{{ ai_gen_id }} {
+      padding: 6px 10px;
+      font-size: calc({{ block.settings.font_size }}px * 0.9);
+    }
+
+    .ai-customer-phone-icon-{{ ai_gen_id }} {
+      width: calc({{ block.settings.icon_size }}px * 0.9);
+      height: calc({{ block.settings.icon_size }}px * 0.9);
+    }
+
+    {% if block.settings.hide_text_mobile %}
+      .ai-customer-phone-number-{{ ai_gen_id }} {
+        display: none;
+      }
+    {% endif %}
+  }
+{% endstyle %}
+
+<customer-phone-{{ ai_gen_id }} {{ block.shopify_attributes }}>
+  {% if block.settings.phone_number != blank %}
+    <a
+      href="tel:{{ block.settings.phone_number | replace: ' ', '' | replace: '-', '' }}"
+      class="ai-customer-phone-{{ ai_gen_id }}"
+      aria-label="Call customer service at {{ block.settings.phone_number }}"
+    >
+      {% if block.settings.show_icon %}
+        <span class="ai-customer-phone-icon-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+          </svg>
+        </span>
+      {% endif %}
+      <span class="ai-customer-phone-number-{{ ai_gen_id }}">{{ block.settings.phone_number }}</span>
+    </a>
+  {% else %}
+    <div class="ai-customer-phone-{{ ai_gen_id }}" style="opacity: 0.5; cursor: default;">
+      {% if block.settings.show_icon %}
+        <span class="ai-customer-phone-icon-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+          </svg>
+        </span>
+      {% endif %}
+      <span class="ai-customer-phone-number-{{ ai_gen_id }}">Add phone number</span>
+    </div>
+  {% endif %}
+</customer-phone-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CustomerPhone{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.style.display = 'block';
+      }
+    }
+
+    customElements.define('customer-phone-{{ ai_gen_id }}', CustomerPhone{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Customer service phone",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone number"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show phone icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_text_mobile",
+      "label": "Hide text on mobile",
+      "default": false,
+      "info": "Show icon only on mobile devices"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 16,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#5c2324"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "hover_text_color",
+      "label": "Hover text",
+      "default": "#987321"
+    },
+    {
+      "type": "color",
+      "id": "hover_background_color",
+      "label": "Hover background",
+      "default": "rgba(152, 115, 33, 0.1)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer service phone"
+    }
+  ]
+}
+{% endschema %}

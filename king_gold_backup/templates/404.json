@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 60
+      }
+    },
+    "1fceebb9-e0b9-4262-812b-f4554e3b4f6a": {
+      "type": "featured-collection",
+      "settings": {
+        "sec_full_width": false,
+        "miniheading": "New Arrival",
+        "mini_heading_style": "link",
+        "title": "<strong>Handpicked Collections</strong>",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "product_list": [],
+        "products_to_show": 7,
+        "columns_desktop": 5,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": true,
+        "arrow_position": "inline",
+        "arrow_style": "icon",
+        "color_scheme": "",
+        "box_align": "top",
+        "text_alignment": "center",
+        "show_text_box": false,
+        "imgcolor_scheme": "",
+        "heading": "Heading",
+        "sub_heading": "Sub Heading",
+        "button_label": "Button lebal",
+        "button_link": "",
+        "link_window": true,
+        "button_style_secondary": "solid",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1fceebb9-e0b9-4262-812b-f4554e3b4f6a"
+  ]
+}

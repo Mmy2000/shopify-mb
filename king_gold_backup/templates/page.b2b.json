@@ -1,0 +1,109 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "17766468822b6e40a3": {
+      "type": "apps",
+      "blocks": {
+        "clay_b2b_wholesale_clay_registration_form_9YUc3M": {
+          "type": "shopify://apps/clay-b2b-wholesale/blocks/clay-registration-form/e89e496b-328b-4767-a3bb-2ff0d4065819",
+          "settings": {
+            "registration_form_id": "74df211d-7f9f-4b6b-b617-308f5b27e450"
+          }
+        }
+      },
+      "block_order": [
+        "clay_b2b_wholesale_clay_registration_form_9YUc3M"
+      ],
+      "settings": {
+        "include_margins": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_ydggDV": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_KGCATU": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_YhG7dx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "author_text_REYGYJ": {
+          "type": "author-text",
+          "settings": {
+            "image_corners": "original",
+            "authorname": "Author name",
+            "authorpos": "Author position"
+          }
+        },
+        "button_KQPh9A": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "link_window": true,
+            "view_all_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KGCATU",
+        "text_YhG7dx",
+        "author_text_REYGYJ",
+        "button_KQPh9A"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "full_width": false,
+        "enable_full_width_bg": false,
+        "full_img_radius": false,
+        "banner_offer_text": "",
+        "banner_offer_text_color": "#ffffff",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "color_scheme": "",
+        "secondary_background": true,
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "17766468822b6e40a3",
+    "main",
+    "image_with_text_ydggDV"
+  ]
+}

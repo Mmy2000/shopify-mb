@@ -1,0 +1,178 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "MB GOLD",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "714ddbb4-4e0c-449c-b85c-a8ec78184ff5": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>The prices may fluctuate according to the current Egyptian market rates. </strong>",
+            "text_style": "subtitle"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "07fd3866-5123-4ee9-bb88-31221aed4635": {
+          "type": "sku",
+          "settings": {
+            "text_style": "body"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "cfa4ce1f-f611-4491-b152-0ee1a8e663ef": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "none",
+            "image_1": "shopify://shop_images/ACC.png",
+            "heading_1": "<strong>Accurate Carat</strong>",
+            "icon_2": "none",
+            "image_2": "shopify://shop_images/cashback.png",
+            "heading_2": "<strong>CASH BACK</strong>",
+            "icon_3": "none",
+            "image_3": "shopify://shop_images/secured.png",
+            "heading_3": "<strong>SECURED COVER</strong>"
+          }
+        },
+        "32225a70-25fe-46a7-b587-9ac2ce5139a7": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "make_collapsible_row": false,
+            "icon": "price_tag",
+            "product_list_limit": 7,
+            "products_per_page": 3,
+            "pagination_style": "counter",
+            "image_ratio": "square",
+            "enable_quick_add": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "714ddbb4-4e0c-449c-b85c-a8ec78184ff5",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "07fd3866-5123-4ee9-bb88-31221aed4635",
+        "description",
+        "cfa4ce1f-f611-4491-b152-0ee1a8e663ef",
+        "32225a70-25fe-46a7-b587-9ac2ce5139a7"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "background-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 5,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "9bac9e65-489b-42e8-b6ce-0508b8231448": {
+      "type": "rich-text",
+      "blocks": {
+        "template--21708270960945__9bac9e65-489b-42e8-b6ce-0508b8231448-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>why choose us</strong></h3><p>- More than 60 years of experience in the field.</p><p>- 100% Guaranteed.- Each alloy is covered in a secure package.</p><p>- Stamped and guaranteed by the Egyptian stamping and weighing authority.</p><p>- Secure Shipping by ourselves with no other hands.</p><p>- Receive up to a 50% cashback on manufacturing fees.</p><p>- Our Cashback Policy available all over Egypt</p>"
+          }
+        },
+        "c2a8f63e-a00f-48c1-a8f6-9826110ddccc": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>ABOUT MB Gold</strong></h3><ul><li>Established in 1960, with a long history of producing high-quality gold products. Our products are available throughout all governorates of Egypt, including alloys and gold pounds.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "template--21708270960945__9bac9e65-489b-42e8-b6ce-0508b8231448-text-1",
+        "c2a8f63e-a00f-48c1-a8f6-9826110ddccc"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "9bac9e65-489b-42e8-b6ce-0508b8231448"
+  ]
+}

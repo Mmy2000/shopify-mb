@@ -1,0 +1,196 @@
+{% doc %}
+  @prompt
+    next to the phone number, i want to add text like 'Customer Service', something's wrong, the website says ''liquid
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-phone-contact-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-phone-contact__label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.label_font_size }}px;
+    color: {{ block.settings.label_color }};
+    font-weight: {{ block.settings.label_font_weight }};
+  }
+
+  .ai-phone-contact__link-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: {{ block.settings.phone_color }};
+    font-size: {{ block.settings.phone_font_size }}px;
+    transition: color 0.3s ease;
+  }
+
+  .ai-phone-contact__link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.phone_hover_color }};
+  }
+
+  .ai-phone-contact__icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    flex-shrink: 0;
+  }
+
+  .ai-phone-contact__icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-phone-contact-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-phone-contact-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.label_text != blank %}
+    <span class="ai-phone-contact__label-{{ ai_gen_id }}">
+      {{ block.settings.label_text }}
+    </span>
+  {% endif %}
+
+  <a href="tel:{{ block.settings.phone_number }}" class="ai-phone-contact__link-{{ ai_gen_id }}">
+    {% if block.settings.show_icon %}
+      <span class="ai-phone-contact__icon-{{ ai_gen_id }}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+        </svg>
+      </span>
+    {% endif %}
+    <span>{{ block.settings.phone_number }}</span>
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "Phone contact",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Label"
+    },
+    {
+      "type": "text",
+      "id": "label_text",
+      "label": "Label text",
+      "default": "Customer Service"
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "label": "Label font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "label_font_weight",
+      "label": "Label font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Phone"
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone number"
+    },
+    {
+      "type": "range",
+      "id": "phone_font_size",
+      "label": "Phone font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "phone_color",
+      "label": "Phone color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "phone_hover_color",
+      "label": "Phone hover color",
+      "default": "#987321"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show phone icon",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Phone contact"
+    }
+  ]
+}
+{% endschema %}

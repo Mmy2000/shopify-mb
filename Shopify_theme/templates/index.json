@@ -1,0 +1,409 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "53766cca-578e-452c-8eb8-d0dd846efc4e": {
+      "type": "slideshow",
+      "blocks": {
+        "4a759741-c7d4-4aa8-84ae-a484a90b66f9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/18.png",
+            "heading": "<strong>24K Gold Ingots</strong>",
+            "heading_size": "h1",
+            "subheading": "<strong>Collection</strong>",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/سبايك",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "accent-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "1143f0aa-80f9-42b5-8e35-c7a69d9c6db2": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2023-12-24_at_11.23.39_PM.png",
+            "heading": "<strong>Pharaonic Collection</strong>",
+            "heading_size": "h1",
+            "subheading": "<strong>Embark on a historical odyssey with our Pharaonic Collection</strong>",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/سبائك-فرعونية",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "accent-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "template--21708270797105__53766cca-578e-452c-8eb8-d0dd846efc4e-slide-2": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2023-12-24_at_6.30.36_PM.png",
+            "heading": "<strong>Islamic Collection</strong>",
+            "heading_size": "h2",
+            "subheading": "<strong>A Journey to Islamic Heritage</strong>",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/العملات-الاسلامية",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 20,
+            "color_scheme": "accent-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "2094448e-8bdb-459f-9e1a-5a0cbe10956c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/cover_2.png",
+            "heading": "New Born Collection",
+            "heading_size": "h1",
+            "subheading": "The perfect gift to celebrate new life, each ingot is presented in a charming package, creating a cherished keepsake for generations to come.",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/mb-gold-new-born-ingots",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "4b758530-839f-4b86-9606-47883844ac66": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2023-12-24_at_7.03.55_PM.png",
+            "heading": "<strong>Royal Gold Coins</strong>",
+            "heading_size": "h1",
+            "subheading": "<strong>Regal Treasures: Explore Royal Gold Coins</strong>",
+            "button_label": "SHOP NOW",
+            "link": "shopify://collections/royal-coins",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "accent-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "4a759741-c7d4-4aa8-84ae-a484a90b66f9",
+        "1143f0aa-80f9-42b5-8e35-c7a69d9c6db2",
+        "template--21708270797105__53766cca-578e-452c-8eb8-d0dd846efc4e-slide-2",
+        "2094448e-8bdb-459f-9e1a-5a0cbe10956c",
+        "4b758530-839f-4b86-9606-47883844ac66"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Best Sellers</strong>",
+        "heading_size": "h1",
+        "description": "<p><strong>Top Picks Loved by All</strong></p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "best-sellers",
+        "products_to_show": 10,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "368f9219-18e9-45ac-9789-3938a5116f28": {
+      "type": "collection-list",
+      "blocks": {
+        "90eee5cf-9121-464c-a3c3-5eccd4a4edc9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "سبايك"
+          }
+        },
+        "template--21708270797105__368f9219-18e9-45ac-9789-3938a5116f28-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "سبائك-فرعونية"
+          }
+        },
+        "template--21708270797105__368f9219-18e9-45ac-9789-3938a5116f28-featured_collection-3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "royal-coins"
+          }
+        },
+        "template--21708270797105__368f9219-18e9-45ac-9789-3938a5116f28-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "العملات-الاسلامية"
+          }
+        },
+        "7c9229c9-4a52-4cad-8984-de65a6944c3b": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mb-gold-new-born-ingots"
+          }
+        }
+      },
+      "block_order": [
+        "90eee5cf-9121-464c-a3c3-5eccd4a4edc9",
+        "template--21708270797105__368f9219-18e9-45ac-9789-3938a5116f28-featured_collection-1",
+        "template--21708270797105__368f9219-18e9-45ac-9789-3938a5116f28-featured_collection-3",
+        "template--21708270797105__368f9219-18e9-45ac-9789-3938a5116f28-featured_collection-2",
+        "7c9229c9-4a52-4cad-8984-de65a6944c3b"
+      ],
+      "settings": {
+        "title": "<strong>Our Collections</strong>",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "bc3f6368-de27-42a4-9082-d50ac475c37d": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>24K Gold Ingots</strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "سبايك",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "baf69deb-27ec-40c2-8ba3-ff2ecdf0a890": {
+      "type": "image-banner",
+      "blocks": {
+        "template--21708270797105__baf69deb-27ec-40c2-8ba3-ff2ecdf0a890-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Islamic Collection</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "template--21708270797105__baf69deb-27ec-40c2-8ba3-ff2ecdf0a890-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "template--21708270797105__baf69deb-27ec-40c2-8ba3-ff2ecdf0a890-buttons-1": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://collections/العملات-الاسلامية",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--21708270797105__baf69deb-27ec-40c2-8ba3-ff2ecdf0a890-heading-1",
+        "template--21708270797105__baf69deb-27ec-40c2-8ba3-ff2ecdf0a890-text-1",
+        "template--21708270797105__baf69deb-27ec-40c2-8ba3-ff2ecdf0a890-buttons-1"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Screen_Shot_2023-12-24_at_11.36.20_PM.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "inverse",
+        "image_behavior": "ambient",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "6b874e80-167b-4e2f-ae51-513bf7d94100": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Pharaonic  Collection</strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "سبائك-فرعونية",
+        "products_to_show": 8,
+        "columns_desktop": 1,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "2051a518-d74a-4d3a-93ee-4f1047435cbc": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/General.mp4",
+        "video_url": "",
+        "description": "MB GOLD",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "bc24dbb3-9aab-40f8-b7a8-18c70deb7803": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Islamic Artefacts</strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "العملات-الاسلامية",
+        "products_to_show": 9,
+        "columns_desktop": 3,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "9cde632e-ab1b-4c41-8dc5-22bd5333626d": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/islamic Social Media ✅.mp4",
+        "video_url": "",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "47e4d667-24b6-4f91-a9ef-fb21f3ff67be": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Royal Gold Coins</strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "royal-coins",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "53766cca-578e-452c-8eb8-d0dd846efc4e",
+    "featured_collection",
+    "368f9219-18e9-45ac-9789-3938a5116f28",
+    "bc3f6368-de27-42a4-9082-d50ac475c37d",
+    "baf69deb-27ec-40c2-8ba3-ff2ecdf0a890",
+    "6b874e80-167b-4e2f-ae51-513bf7d94100",
+    "2051a518-d74a-4d3a-93ee-4f1047435cbc",
+    "bc24dbb3-9aab-40f8-b7a8-18c70deb7803",
+    "9cde632e-ab1b-4c41-8dc5-22bd5333626d",
+    "47e4d667-24b6-4f91-a9ef-fb21f3ff67be"
+  ]
+}

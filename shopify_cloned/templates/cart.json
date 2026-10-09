@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "color_scheme": "background-1",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "776d10b3-7b83-42b8-9074-87d46ff2f3f5": {
+      "type": "rich-text",
+      "blocks": {
+        "template--21708270731569__776d10b3-7b83-42b8-9074-87d46ff2f3f5-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "WE WILL CONTACT YOU",
+            "heading_size": "h1"
+          }
+        },
+        "template--21708270731569__776d10b3-7b83-42b8-9074-87d46ff2f3f5-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>our customer service agent will contact you in 2 working days to confirm  the order and <strong>PRICE</strong> XXX </p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--21708270731569__776d10b3-7b83-42b8-9074-87d46ff2f3f5-heading-1",
+        "template--21708270731569__776d10b3-7b83-42b8-9074-87d46ff2f3f5-text-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "cart-footer",
+    "776d10b3-7b83-42b8-9074-87d46ff2f3f5"
+  ]
+}

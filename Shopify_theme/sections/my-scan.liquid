@@ -1,0 +1,612 @@
+{{ 'section-my-scan.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'qrcode.min.js' | asset_url }}" defer="defer"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js" defer="defer"></script>
+<script src="{{ 'my-scan.js' | asset_url }}" defer="defer"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=PT+Serif:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+{% render 'cert-styles' %}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <my-scan-page data-api-endpoint="{{ section.settings.api_endpoint }}" data-api-endpoint-fallback="{{ section.settings.api_endpoint_fallback }}" class="my-scan-page">
+
+      <!-- LANDING STATE -->
+      <div class="my-scan-landing" data-landing>
+        <div class="my-scan-landing__card">
+          <div class="my-scan-landing__logo">
+            {%- if section.settings.cert_logo != blank -%}
+              <img src="{{ section.settings.cert_logo | image_url: width: 200 }}" alt="MB GOLD" loading="eager">
+            {%- else -%}
+              <img src="{{ 'mb-gold-logo.png' | asset_url }}" alt="MB GOLD" loading="eager">
+            {%- endif -%}
+          </div>
+          <h1 class="my-scan-landing__title">{{ section.settings.landing_title | default: 'Verify Your Product' }}</h1>
+          <p class="my-scan-landing__subtitle">{{ section.settings.landing_subtitle | default: 'Enter the serial number or scan the QR code to verify authenticity' }}</p>
+
+          <form class="my-scan-landing__form" data-landing-form>
+            <input
+              type="text"
+              class="my-scan-landing__input"
+              data-landing-input
+              placeholder="{{ 'sections.my_scan.enter_serial' | t }}"
+              autocomplete="off"
+              required
+            >
+            <button type="submit" class="my-scan-landing__submit">
+              {{ 'sections.my_scan.verify_btn' | t }}
+            </button>
+          </form>
+
+          <div class="my-scan-landing__divider">
+            <span>{{ 'sections.my_scan.or' | t }}</span>
+          </div>
+
+           <button type="button" class="my-scan-landing__scan-btn" data-landing-scan>
+             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="2"/>
+             </svg>
+             {{ 'sections.my_scan.scan_qr_code' | t }}
+           </button>
+
+            <div class="my-scan-landing__divider">
+              <span>OR</span>
+            </div>
+
+            <button type="button" class="my-scan-landing__verify-old-btn" data-verify-old-qr>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Verify Old QR Code
+            </button>
+         </div>
+       </div>
+
+      <!-- SCANNER MODAL -->
+      <div class="my-scan-scanner hidden" data-scanner-modal role="dialog" aria-label="Scan QR Code">
+        <div class="my-scan-scanner__content">
+          <div class="my-scan-scanner__header">
+            <p class="my-scan-scanner__title">Scan QR Code</p>
+            <button type="button" class="my-scan-scanner__close" data-scanner-close aria-label="Close scanner">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+          <div class="my-scan-scanner__video">
+            <video playsinline muted autoplay></video>
+            <canvas style="display:none;"></canvas>
+            <div class="my-scan-scanner__qr-frame">
+              <div class="my-scan-scanner__scan-line"></div>
+            </div>
+          </div>
+          <div class="my-scan-scanner__result hidden"></div>
+        </div>
+      </div>
+
+      <!-- LOADING STATE -->
+      <div class="my-scan__loading hidden" data-loading>
+        <div class="my-scan__loading-spinner"></div>
+        <span>{{ 'sections.my_scan.loading' | t }}</span>
+      </div>
+
+       <!-- INVALID / NOT FOUND STATE -->
+       <div class="my-scan-invalid hidden" data-invalid-view>
+         <div class="my-scan-invalid__card">
+           <div class="my-scan-invalid__icon">
+             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M12 8v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+             </svg>
+           </div>
+           <h2 class="my-scan-invalid__title">Product Not Found</h2>
+           <p class="my-scan-invalid__message">The serial number you entered could not be verified. Please check the number and try again.</p>
+           <a href="/pages/my-scan" class="my-scan-invalid__btn">Try Again</a>
+         </div>
+       </div>
+
+        <!-- OLD QR CODE FORM STATE -->
+        <div class="my-scan-old-qr hidden" data-old-qr-view>
+          <div class="my-scan-landing__card">
+            <div class="my-scan-landing__logo">
+              {%- if section.settings.cert_logo != blank -%}
+                <img src="{{ section.settings.cert_logo | image_url: width: 200 }}" alt="MB GOLD" loading="eager">
+              {%- else -%}
+                <img src="{{ 'mb-gold-logo.png' | asset_url }}" alt="MB GOLD" loading="eager">
+              {%- endif -%}
+            </div>
+            <h1 class="my-scan-landing__title">Verify Old QR Code</h1>
+            <p class="my-scan-landing__subtitle">Enter your gold bar details below</p>
+
+            <form class="my-scan-old-qr__form" data-old-qr-form>
+              <div class="my-scan-old-qr__field">
+                <label class="my-scan-old-qr__label" for="old-qr-serial">Serial Number</label>
+                <input
+                  type="text"
+                  class="my-scan-old-qr__input"
+                  id="old-qr-serial"
+                  data-old-qr-serial
+                  placeholder="e.g. 60003"
+                  autocomplete="off"
+                  required
+                >
+              </div>
+
+              <div class="my-scan-old-qr__field">
+                <label class="my-scan-old-qr__label" for="old-qr-name">Full Name</label>
+                <input
+                  type="text"
+                  class="my-scan-old-qr__input"
+                  id="old-qr-name"
+                  data-old-qr-name
+                  placeholder="Enter your full name"
+                  autocomplete="off"
+                  required
+                >
+              </div>
+
+              <div class="my-scan-old-qr__field">
+                <label class="my-scan-old-qr__label" for="old-qr-email">Email Address</label>
+                <input
+                  type="email"
+                  class="my-scan-old-qr__input"
+                  id="old-qr-email"
+                  data-old-qr-email
+                  placeholder="you@example.com"
+                  autocomplete="off"
+                  required
+                >
+              </div>
+
+              <div class="my-scan-old-qr__field">
+                <label class="my-scan-old-qr__label" for="old-qr-phone">Phone Number</label>
+                <input
+                  type="tel"
+                  class="my-scan-old-qr__input"
+                  id="old-qr-phone"
+                  data-old-qr-phone
+                  placeholder="+966 5XX XXX XXX"
+                  autocomplete="off"
+                  required
+                >
+              </div>
+
+              <div class="my-scan-old-qr__field">
+                <label class="my-scan-old-qr__label">Gold Bar Photo (Optional)</label>
+                <div class="my-scan-old-qr__file-area" data-file-drop>
+                  <input
+                    type="file"
+                    id="old-qr-photo"
+                    class="my-scan-old-qr__file-input"
+                    data-old-qr-photo
+                    accept="image/jpeg,image/jpg,image/png,image/webp"
+                  >
+                  <label class="my-scan-old-qr__file-label" for="old-qr-photo">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <polyline points="17 8 12 3 7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <line x1="12" y1="3" x2="12" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span data-file-text>Tap to upload photo</span>
+                  </label>
+                  <p class="my-scan-old-qr__file-hint">JPG, PNG or WebP — Max 10MB</p>
+                </div>
+              </div>
+
+              <button type="button" class="my-scan-old-qr__submit" data-old-qr-submit>
+                Submit
+              </button>
+            </form>
+
+            <div class="my-scan-landing__back">
+              <a href="/pages/my-scan" class="my-scan-landing__back-link">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Verify
+              </a>
+            </div>
+          </div>
+        </div>
+
+      <!-- PRODUCT STATE -->
+      <div class="my-scan-product-view hidden" data-product-view>
+
+      <div class="my-scan__loading hidden">
+        <div class="my-scan__loading-spinner"></div>
+        <span>{{ 'sections.my_scan.loading' | t }}</span>
+      </div>
+
+      <div class="my-scan__error hidden">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span>{{ 'sections.my_scan.error' | t }}</span>
+      </div>
+
+      <div class="my-scan-wrapper">
+        <div class="my-scan-grid">
+
+          <!-- LEFT COLUMN -->
+          <div class="my-scan-grid__main">
+
+            <!-- Product Card -->
+            <div class="my-scan-product">
+              <div class="my-scan-product__header">
+                {%- if section.settings.cert_logo != blank -%}
+                  <img class="my-scan-product__logo" src="{{ section.settings.cert_logo | image_url: width: 240 }}" alt="MB GOLD" loading="eager">
+                {%- else -%}
+                  <img class="my-scan-product__logo" src="{{ 'mb-gold-logo.png' | asset_url }}" alt="MB GOLD" loading="eager" crossorigin="anonymous">
+                {%- endif -%}
+                <div class="my-scan-product__gold-icon">
+                  <img src="{{ 'goldbarlogo.png' | asset_url }}" alt="Gold Bar" loading="lazy">
+                </div>
+              </div>
+
+              <div class="my-scan-product__body">
+                <div class="my-scan-fields">
+                  <div class="my-scan-field">
+                    <p class="my-scan-field__label">{{ 'sections.my_scan.weight' | t }}</p>
+                    <p class="my-scan-field__value" data-product-weight>{{ section.settings.product_weight }}</p>
+                  </div>
+                  <div class="my-scan-field">
+                    <p class="my-scan-field__label">{{ 'sections.my_scan.carat_purity' | t }}</p>
+                    <p class="my-scan-field__value" data-product-carat>{{ section.settings.product_carat }}</p>
+                  </div>
+                  <div class="my-scan-field">
+                    <p class="my-scan-field__label">{{ 'sections.my_scan.serial_number' | t }}</p>
+                    <p class="my-scan-field__value" data-product-id>{{ section.settings.product_id }}</p>
+                  </div>
+                  <div class="my-scan-field">
+                    <p class="my-scan-field__label">{{ section.settings.gold_type }}</p>
+                    <p class="my-scan-field__value" data-gold-name>{{ section.settings.gold_name }}</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Certificate (inline preview) -->
+            {%- if section.settings.show_certificate -%}
+              <div class="my-scan-cert">
+                <div class="my-scan-cert__header">
+                  <h3 class="my-scan-cert__title">{{ 'sections.my_scan.certificate_title' | t }}</h3>
+                </div>
+                <div class="my-scan-cert__body">
+                  <div class="cert-wrapper">
+                    <div class="cert" data-cert-inline>
+                      <img class="cert-bg" src="{{ 'paper-texture.png' | asset_url }}" alt="" crossorigin="anonymous">
+                      <div class="cert-content">
+                        <header class="header">
+                          <img class="logo" src="{{ 'mb-gold-logo.png' | asset_url }}" alt="MB Gold - Malak & Bushra, Since 1960" width="170" height="170" crossorigin="anonymous">
+                          <div class="title-bar">
+                            <span class="rule left"></span>
+                            <span class="title">CERTIFICATE</span>
+                            <span class="rule right"></span>
+                          </div>
+                        </header>
+
+                        <table class="data">
+                          <tr>
+                            <td><div class="cell"><span class="label">Code No.</span><span class="value" data-cert-code>---</span></div></td>
+                            <td dir="rtl" lang="ar"><div class="cell ar" dir="rtl" lang="ar"><span class="label">كود</span><span class="value" data-cert-code>---</span></div></td>
+                          </tr>
+                          <tr>
+                            <td><div class="cell"><span class="label">Description:</span><span class="value" data-cert-desc-en>---</span></div></td>
+                            <td dir="rtl" lang="ar"><div class="cell ar value-only" dir="rtl" lang="ar"><span class="value" data-cert-desc-ar>---</span></div></td>
+                          </tr>
+                          <tr>
+                            <td><div class="cell"><span class="label">Gold Type:</span><span class="value" data-cert-gold-en>---</span></div></td>
+                            <td dir="rtl" lang="ar"><div class="cell ar value-only" dir="rtl" lang="ar"><span class="value" data-cert-gold-ar>---</span></div></td>
+                          </tr>
+                          <tr>
+                            <td><div class="cell"><span class="label">Weight:</span><span class="value" data-cert-weight-en>---</span></div></td>
+                            <td dir="rtl" lang="ar"><div class="cell ar value-only" dir="rtl" lang="ar"><span class="value" data-cert-weight-ar>---</span></div></td>
+                          </tr>
+                        </table>
+
+                        <div class="iso-line">ISO 9001:2015 CERTIFIED</div>
+
+                        <div class="assets">
+                          <img class="iso-badge" src="{{ 'iso-badge.png' | asset_url }}" alt="ISO 9001:2015 Certified" crossorigin="anonymous">
+                          <div class="qr" data-cert-qr-mini></div>
+                        </div>
+
+                        <footer class="footer">
+                          <div class="social ig"><img class="icon" src="{{ 'instagram.svg' | asset_url }}" alt="Instagram" crossorigin="anonymous">instagram.com/MBgold1960</div>
+                          <div class="social fb"><img class="icon" src="{{ 'facebook.svg' | asset_url }}" alt="Facebook" crossorigin="anonymous">facebook.com/MBGold1960</div>
+                        </footer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-scan-cert__actions">
+                  <button type="button" class="my-scan-cert__btn my-scan-cert__btn--download" data-cert-download>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    {{ 'sections.my_scan.download_certificate' | t }}
+                  </button>
+                </div>
+              </div>
+            {%- endif -%}
+
+            
+
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="my-scan-grid__aside">
+
+            <div class="my-scan-buyer-info">
+              <div class="my-scan-buyer-info__header">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <p class="my-scan-buyer-info__title">Buyer Information</p>
+              </div>
+              <div class="my-scan-buyer-info__body">
+                <form class="my-scan-buyer-info__form" data-buyer-form>
+                  <div class="my-scan-buyer-info__field">
+                    <label class="my-scan-buyer-info__label" for="buyer-name">Name</label>
+                    <input class="my-scan-buyer-info__input" type="text" id="buyer-name" name="name" placeholder="Enter your full name" required>
+                  </div>
+                  <div class="my-scan-buyer-info__field">
+                    <label class="my-scan-buyer-info__label" for="buyer-email">Email</label>
+                    <input class="my-scan-buyer-info__input" type="email" id="buyer-email" name="email" placeholder="Enter your email" required>
+                  </div>
+                  <div class="my-scan-buyer-info__field">
+                    <label class="my-scan-buyer-info__label" for="buyer-phone">Phone Number</label>
+                    <input class="my-scan-buyer-info__input" type="tel" id="buyer-phone" name="phone" placeholder="Enter your phone number" required>
+                  </div>
+                  <div class="my-scan-buyer-info__field">
+                    <label class="my-scan-buyer-info__label">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="10 9 9 9 8 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      Invoice / Receipt
+                    </label>
+                    <div class="my-scan-buyer-info__file-area" data-file-drop>
+                      <input type="file" id="buyer-attachment" name="attachment" class="my-scan-buyer-info__file-input" accept=".jpg,.jpeg,.png,.gif,.webp,.pdf" data-file-input>
+                      <div class="my-scan-buyer-info__file-empty">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <polyline points="17 8 12 3 7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <line x1="12" y1="3" x2="12" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Drag & drop or click to upload invoice</span>
+                        <p class="my-scan-buyer-info__file-hint">Upload your invoice — JPG, PNG, GIF, WebP or PDF</p>
+                      </div>
+                      <div class="my-scan-buyer-info__file-selected" data-file-selected style="display: none;">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                          <circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="2"/>
+                          <path d="M8 12l3 3 5-6" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="my-scan-buyer-info__file-name" data-file-text></span>
+                        <span class="my-scan-buyer-info__file-status">Ready to submit</span>
+                        <button type="button" class="my-scan-buyer-info__file-remove" data-file-remove>Remove</button>
+                      </div>
+                    </div>
+                    <p class="my-scan-buyer-info__invoice-badge">Invoice required to submit buyer information</p>
+                  </div>
+                  <button type="submit" class="my-scan-buyer-info__submit" disabled>Submit</button>
+                  <p class="my-scan-buyer-info__error" data-buyer-error>Please upload your invoice to proceed</p>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+      
+
+    </my-scan-page>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "My Scan",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "landing_title",
+      "label": "Landing page title",
+      "default": "Verify Your Product"
+    },
+    {
+      "type": "text",
+      "id": "landing_subtitle",
+      "label": "Landing page subtitle",
+      "default": "Enter the serial number or scan the QR code to verify authenticity"
+    },
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header title",
+      "default": "Category details"
+    },
+    {
+      "type": "text",
+      "id": "header_subtitle",
+      "label": "Header subtitle",
+      "default": "Category details and information"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Au"
+    },
+    {
+      "type": "text",
+      "id": "category_label",
+      "label": "Category label",
+      "default": "GOLD BAR"
+    },
+    {
+      "type": "text",
+      "id": "product_name",
+      "label": "Product name / Name of Bar",
+      "default": "5g Gold Bar"
+    },
+    {
+      "type": "text",
+      "id": "gold_type",
+      "label": "Gold Type",
+      "default": "GOLD BAR"
+    },
+    {
+      "type": "text",
+      "id": "gold_name",
+      "label": "Gold Name",
+      "default": "5g Gold Bar - 24K"
+    },
+    {
+      "type": "text",
+      "id": "product_weight",
+      "label": "Weight",
+      "default": "5g"
+    },
+    {
+      "type": "text",
+      "id": "product_carat",
+      "label": "Carat / Purity",
+      "default": "24K - 999.9 Fine"
+    },
+    {
+      "type": "text",
+      "id": "product_name_ar",
+      "label": "Product name (Arabic)",
+      "default": "سبيكة ذهب 999.9"
+    },
+    {
+      "type": "text",
+      "id": "product_carat_ar",
+      "label": "Carat / Purity (Arabic)",
+      "default": "ذهب عيار 24 قراط نقي 999.9"
+    },
+    {
+      "type": "text",
+      "id": "product_weight_ar",
+      "label": "Weight (Arabic)",
+      "default": "50 جرام"
+    },
+    {
+      "type": "text",
+      "id": "product_id_label",
+      "label": "Serial Number Label",
+      "default": "SERIAL NO"
+    },
+    {
+      "type": "text",
+      "id": "product_id",
+      "label": "Serial Number",
+      "default": "60003"
+    },
+    {
+      "type": "url",
+      "id": "api_endpoint",
+      "label": "API Endpoint",
+      "info": "Use {id} as placeholder for dynamic product ID. Example: https://api.example.com/products/{id}"
+    },
+    {
+      "type": "url",
+      "id": "api_endpoint_fallback",
+      "label": "Fallback API Endpoint",
+      "info": "Secondary endpoint used if primary fails. Use {id} as placeholder."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_certificate",
+      "label": "Show certificate",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_logo",
+      "label": "Certificate logo",
+      "info": "MB GOLD logo for the certificate header"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_iso_badge",
+      "label": "ISO badge image",
+      "info": "ISO 9001:2015 certification badge"
+    },
+    {
+      "type": "url",
+      "id": "cert_instagram",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "cert_facebook",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "My Scan"
+    }
+  ]
+}
+{% endschema %}

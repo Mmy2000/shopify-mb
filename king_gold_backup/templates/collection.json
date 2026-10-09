@@ -1,0 +1,157 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "make_full_width": false,
+        "show_collection_image": false,
+        "show_collection_description": false,
+        "hero_layout": "overlay",
+        "coll_bgcolor": "#000000",
+        "coll_color": "#ffffff",
+        "coll_overlay": 30
+      }
+    },
+    "collection_list_Gwtpge": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_yf6RaW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "featured_collection_n3tzec": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "featured_collection_7rRVce": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "featured_collection_Jqe8EQ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "featured_collection_Rjw3X3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "featured_collection_URjUfR": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "featured_collection_D9ENQN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        },
+        "featured_collection_66VaUd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_yf6RaW",
+        "featured_collection_n3tzec",
+        "featured_collection_7rRVce",
+        "featured_collection_Jqe8EQ",
+        "featured_collection_Rjw3X3",
+        "featured_collection_URjUfR",
+        "featured_collection_D9ENQN",
+        "featured_collection_66VaUd"
+      ],
+      "disabled": true,
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "section_width": "container",
+        "miniheading": "",
+        "mini_heading_style": "outline",
+        "title": "",
+        "heading_position": "coll_left",
+        "heading_size": "h0",
+        "heading_alignment": "left",
+        "description": "",
+        "description_style": "body",
+        "show_view_all": false,
+        "view_all_style": "link",
+        "show_icon": false,
+        "icon_style": "link",
+        "enable_collection_img_full": true,
+        "collection_card_direction": "column",
+        "content_position": "bellow_image",
+        "image_ratio": "portrait",
+        "image_position": "start",
+        "columns_desktop": 6,
+        "grid_style": "slider",
+        "rows_desktop": 1,
+        "arrow_position": "inline",
+        "arrow_style": "icon",
+        "spacing_grid_horizontal": 30,
+        "spacing_grid_vertical": 30,
+        "color_scheme": "background-1",
+        "enable_hover": false,
+        "scoll_bg": "#ffffff",
+        "scoll_txt": "#000000",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 32,
+        "padding_bottom": 0
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 4,
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "vertical_filter_bg_color": "#ffffff",
+        "enable_filter_bg": true,
+        "enable_sticky": false,
+        "enable_sorting": true,
+        "pagination_type": "paged",
+        "enable_listdesc": true,
+        "columns_mobile": "2",
+        "padding_top": 16,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "collection_list_Gwtpge",
+    "product-grid"
+  ]
+}
